@@ -1,0 +1,12 @@
+ if self.tagname and self.tagname2 in list1:
+                try: 
+                    question = soup.find("div", "post-text")
+                    title = soup.find("a", "question-hyperlink")
+                    self.list2.append(str(title)+str(question)+url)
+                    current += 1
+                except AttributeError:
+                    pass            
+            logging.info("%s questions passed, %s questions \
+                collected" % (count, current))
+            count += 1
+        return self.list2
